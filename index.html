@@ -123,13 +123,16 @@
 									HOME
 								</a>
 							</li>
-							<li>
-								<!-- SERVICES -->
+							<li><!-- SERVICES -->
 								<a href="#services">
 									SERVICES
 								</a>
+								<ul class="dropdown-menu">
+							<li><a href="residential.html">Residential Services</a></li>
+							<li><a href="corpo.html">Corporate Services</a></li>
+							<li><a href="tender.html">Tender Form</a></li>
+						</ul>
 							</li>
-							<li>
 								<!-- WORK -->
 								<a href="#work">
 									WORK
@@ -241,7 +244,7 @@
 						data-endelementdelay="0.1" data-endspeed="500"
 						style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
 
-						<a class="btn btn-dark" href="#">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+						<a class="btn btn-dark" href="tender.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
 				</li>
 
 
@@ -1141,8 +1144,9 @@
 									<label for="contact:attachment"> File Attachment</label>
 
 									<!-- custom file upload -->
-									<input class="custom-file-upload" type="file" id="file" name="contact[attachment]"
-										id="contact:attachment" data-btn-text="Select a File" .bg-info />
+								<button type="custom-file-upload" class="btn btn-info">
+									<i class= "fa fa-check"></i>Select a file 
+								</button>
 									<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 									<div class="row">

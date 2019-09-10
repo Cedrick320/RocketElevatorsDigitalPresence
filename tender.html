@@ -211,19 +211,19 @@
             
             <label class="fs-12">Number of apartement:</label>
             
-        <input required type="number" min="0" value="" class="residentalbuild" id="nb-app-resid" onkeyup="CalcResidential()">
+        <input required type="number" min="0" value="" class="residentalbuild" id="nb-app-resid" >
             
             <!--NUMB ETAGE--> 
                  <label class="fs-12">Number of floor:</label>
 
                
-               <input required type="number" min="0" value="" class="residentialbuild" id="nb-floor-resid" onkeyup="CalcResidential()">
+               <input required type="number" min="0" value="" class="residentialbuild" id="nb-floor-resid" onkeyup="calcResidential()">
                
                 
                 <!--Basements-->
             <label class="fs-12">Number of basements:</label>
 
-            <input required type="number" min="0" value="" class="residentialbuild" id="nb-bsmnt-resid" onkeyup="CalcResidential()">
+            <input required type="number" min="0" value="" class="residentialbuild" id="nb-bsmnt-resid" onkeyup="calcResidential()">
 
 
         </div>
@@ -237,13 +237,13 @@
               
             <label class="fs-12">Number of distinct business:</label>
 
-            <input required type="number" min="0" value="" class="nb-busi-comm" onkeyup="CalcCommercial()">
+            <input required type="number" min="0" value="" class="commercial build"id="nb-busi-comm" onkeyup="calcCommercial()">
 
             <!--numb floor-->
 
             <label class="fs-12">Number of floor:</label>
             
-            <input required type="number" min="0" value="" class="nb-floor-comm" onkeyup="CalcCommercial()">
+            <input required type="number" min="0" value="" class="commercial build"id="nb-floor-comm" onkeyup="calcCommercial()">
             
 
             <!--numb basement-->
@@ -251,7 +251,7 @@
             <label class="fs-12">Number of basement:</label>
 
 
-            <input required type="number" min="0" value="" class="nb-bsmnt-comm" onkeyup="CalcCommercial()">
+            <input required type="number" min="0" value=""class="commercial build"id="nb-bsmnt-comm" onkeyup="calcCommercial()">
 
 
 
@@ -260,7 +260,7 @@
             <label class="fs-12">Number of parking places:</label>
 
 
-            <input required type="number" min="0" value="" class="nb-park-comm" onkeyup="CalcCommercial()">
+            <input required type="number" min="0" value="" class="commercial build"id="nb-park-comm" onkeyup="calcCommercial()">
 
 
             <!--numb lift cages-->
@@ -269,7 +269,7 @@
             <label class="fs-12">Number of lift cages:</label>
 
 
-            <input required type="number" min="1" value="" class="nb-cage-comm" onkeyup="CalcCommercial()">
+            <input required type="number" min="0" value="" class="commercial build"id="nb-lift-comm" onkeyup="calcCommercial()">
 
         </div>
 
@@ -281,32 +281,32 @@
         <label class="fs-12">Number of differants tenant company:</label>
 
 
-        <input required type="number" min="1" value="" class="nb-cage-corp" onkeyup="CalcCorporative()">
+        <input required type="number" min="0" value="" class="nb-rent-corp" onkeyup="calcCorporative()">
 
     
         <!--numb floor-->
         <label class="fs-12">Number of floor:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-floor-corp" onkeyup="CalcCorporative()">
+        <input required type="number" min="0" value="" class="nb-floor-corp" onkeyup="calcCorporative()">
 
         <!--numb basement-->
         <label class="fs-12">Number of basement:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-bsmnt-corp" onkeyup="CalcCorporative()">
+        <input required type="number" min="0" value="" class="nb-bsmnt-corp" onkeyup="calcCorporative()">
 
         <!--numb parking-->
         <label class="fs-12">Number of parking places:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-park-corp" onkeyup="CalcCorporative()">
+        <input required type="number" min="0" value="" class="nb-park-corp" onkeyup="calcCorporative()">
 
         <!--max pple per floor-->
         <label class="fs-12">Maximum people ammount per floor:</label>
 
 
-        <input required type="number" min="1" value="" class="nb-ppl-corp" onkeyup="CalcCorporative()">
+        <input required type="number" min="0" value="" class="nb-ppl-corp" onkeyup="calcCorporative()">
 
     
     
@@ -319,33 +319,33 @@
              <!--commerce distincts-->
              <label class="fs-12">Number of distinct business:</label>
 
-             <input required type="number" min="0" value="" class="nb-busi-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" value="" class="hybridbuild" id="nb-busi-hybrid" onkeyup="CalcHybrid()">
              <!--nb floor-->   
              <label class="fs-12">Number of floor:</label>
 
-             <input required type="number" min="0" value="" class="nb-floor-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" value="" class="hybridbuild" id="nb-floor-hybrid" onkeyup="CalcHybrid()">
                 <!--nb basement-->
                 <label class="fs-12">Number of basement:</label>
 
-             <input required type="number" min="0" value="" class="nb-bsmnt-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" value="" class="hybridbuild" id="nb-bsmnt-hybrid" onkeyup="CalcHybrid()">
  
                 <!--nb places stationnement-->
 
                 <label class="fs-12">Number of parking places:</label>
 
-                <input required type="number" min="0" value="" class="nb-park-hybrid" onkeyup="CalcHybrid()">
+                <input required type="number" min="0" value="" class="hybridbuild" id="nb-park-hybrid" onkeyup="CalcHybrid()">
     
                 <!--nb max de personnes par étage-->
 
                 <label class="fs-12">Maximum people ammount per floor:</label>
 
-                <input required type="number" min="1" value="" class="nb-ppl-hybrid" onkeyup="CalcHybrid()">
+                <input required type="number" min="0" value="" class="hybridbuild" id="nb-ppl-hybrid" onkeyup="CalcHybrid()">
 
                 <!--heures d'activité par jour-->
             
                 <label class="fs-12">Hours of activity<span>(max 24)</span></label>
 
-             <input required type="number" min="0" max=24 value="" class="nb-hrs-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" max=24 value="" class="hybridbuild" id="nb-hrs-hybrid" onkeyup="CalcHybrid()">
  
             </div>
         </div>
@@ -363,18 +363,18 @@
 <div class="toggle-transparent toggle-bordered-full clearfix">
 
 	<br>
-		<a id="somme" class="float-right"> 0</a>
+		<a id="total-lift" class="float-right" > 0</a>
 		<span class="float-left">Lifts cage ammount:</span>
 	</span>
 </br>
 	<br>
-		<a id="fees" class="float-right"> 0.00</a>
+		<a id="instal-fees" class="float-right"> 0.00</a>
 		<span class="float-left">Installation Fees:</span>
 		<strong class="float-right">$</strong>
 	</span>
 </br>
 	<br>
-		<a id="totalPrice" class="float-right">0.00</a>
+		<a id="final-price" class="float-right">0.00</a>
 		<strong class="float-left">TOTAL:</strong>
 		<strong class="float-right">$</strong>
 	</span>
