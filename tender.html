@@ -11,10 +11,7 @@
 	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-	<!-- WEB FONTS : use %7C instead of | (pipe) -->
-	<link
-		href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-		rel="stylesheet" type="text/css" />
+	
 
 	<!-- CORE CSS -->
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -172,7 +169,7 @@
                     <div class="container">
     
                 <br>
-                <h1 class="m-0 fs-50 fw-300 wow fadeInUp" data-wow-delay="0.4s">TENDER FORM</h1>
+                <h1 class="m-0 fs-50 fw-300 wow fadeInUp" style="text-align: center" data-wow-delay="0.4s">GET A QUOTE</h1>
                 <hr/>
     
                 <!-- Boxes -->
@@ -182,9 +179,9 @@
                         <!-- Building Box -->
     
                             <div class="col-md-10" style="text-align: left">
-                            <label for="building-box">Choose your building type:</label>
-                            <select  id="building-box" onchange="on_change()" >
-                                <option value="0">Building Type</option>
+                            <label for="building-box">Choose your building class:</label>
+                            <select  id="selector" onchange="on_change();" >
+                                <option value="0">Building class</option>
                                 <option value="1">Residential</option>
                                 <option value="2">Commercial</option>
                                 <option value="3">Corporate</option>
@@ -193,9 +190,9 @@
                             </select>
     
                 <!--radio button-->
-            <div style="text-align: left">
+            <div style="text-align:left ;">
                         <br>
-                    <label for="quality">Selection of the quality range: </label>
+                    <label for="quality">Quality range of the lifts and installation: </label>
                     <input id="standard" type="radio" name="quality" value="standard"> Standard
                     <input id="premium" type="radio" name="quality" value="premium"> Premium
                     <input id="excelium" type="radio" name="quality" value="excelium"> Excelium
@@ -209,7 +206,7 @@
                
                <!--residentialbox-->
                
-               <div id="residential" style="text-align: center">
+               <div id="residential" style="text-align: center; display: none;">
             <!--numb of appartemment-->
             
             <label class="fs-12">Number of apartement:</label>
@@ -235,18 +232,161 @@
         <!--commercialbox-->
 
 
-        <div id="comercial" style="text-align: center">
+        <div id="commercial" style="text-align: center; display: none;">
             <!--numb commerce-->
               
-            <label class="fs-15">Number of business:</label>
+            <label class="fs-12">Number of distinct business:</label>
 
             <input required type="number" min="0" value="" class="nb-busi-comm" onkeyup="CalcCommercial()">
 
             <!--numb floor-->
 
-            <label class="fs-15">Number of floor:</label>
+            <label class="fs-12">Number of floor:</label>
             
             <input required type="number" min="0" value="" class="nb-floor-comm" onkeyup="CalcCommercial()">
+            
+
+            <!--numb basement-->
+
+            <label class="fs-12">Number of basement:</label>
+
+
+            <input required type="number" min="0" value="" class="nb-bsmnt-comm" onkeyup="CalcCommercial()">
+
+
+
+            <!--numb parking-->
+            
+            <label class="fs-12">Number of parking places:</label>
+
+
+            <input required type="number" min="0" value="" class="nb-park-comm" onkeyup="CalcCommercial()">
+
+
+            <!--numb lift cages-->
+
+            
+            <label class="fs-12">Number of lift cages:</label>
+
+
+            <input required type="number" min="1" value="" class="nb-cage-comm" onkeyup="CalcCommercial()">
+
+        </div>
+
+        <!--corp box-->
+       <div id="corp" style="text-align: center; display: none;">
+    
+        <!--numb locataire-->
+      
+        <label class="fs-12">Number of differants tenant company:</label>
+
+
+        <input required type="number" min="1" value="" class="nb-cage-corp" onkeyup="CalcCorporative()">
+
+    
+        <!--numb floor-->
+        <label class="fs-12">Number of floor:</label>
+
+
+        <input required type="number" min="0" value="" class="nb-floor-corp" onkeyup="CalcCorporative()">
+
+        <!--numb basement-->
+        <label class="fs-12">Number of basement:</label>
+
+
+        <input required type="number" min="0" value="" class="nb-bsmnt-corp" onkeyup="CalcCorporative()">
+
+        <!--numb parking-->
+        <label class="fs-12">Number of parking places:</label>
+
+
+        <input required type="number" min="0" value="" class="nb-park-corp" onkeyup="CalcCorporative()">
+
+        <!--max pple per floor-->
+        <label class="fs-12">Maximum people ammount per floor:</label>
+
+
+        <input required type="number" min="1" value="" class="nb-ppl-corp" onkeyup="CalcCorporative()">
+
+    
+    
+    </div>
+
+            <!--hybridbox-->
+          
+            <div id="hybrid" style="text-align: center; display:none;">
+
+             <!--commerce distincts-->
+             <label class="fs-12">Number of distinct business:</label>
+
+             <input required type="number" min="0" value="" class="nb-busi-hybrid" onkeyup="CalcHybrid()">
+             <!--nb floor-->   
+             <label class="fs-12">Number of floor:</label>
+
+             <input required type="number" min="0" value="" class="nb-floor-hybrid" onkeyup="CalcHybrid()">
+                <!--nb basement-->
+                <label class="fs-12">Number of basement:</label>
+
+             <input required type="number" min="0" value="" class="nb-bsmnt-hybrid" onkeyup="CalcHybrid()">
+ 
+                <!--nb places stationnement-->
+
+                <label class="fs-12">Number of parking places:</label>
+
+                <input required type="number" min="0" value="" class="nb-park-hybrid" onkeyup="CalcHybrid()">
+    
+                <!--nb max de personnes par étage-->
+
+                <label class="fs-12">Maximum people ammount per floor:</label>
+
+                <input required type="number" min="1" value="" class="nb-ppl-hybrid" onkeyup="CalcHybrid()">
+
+                <!--heures d'activité par jour-->
+            
+                <label class="fs-12">Hours of activity<span>(max 24)</span></label>
+
+             <input required type="number" min="0" max=24 value="" class="nb-hrs-hybrid" onkeyup="CalcHybrid()">
+ 
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+			</div>
+
+
+<i class="fancy-arrow"></i>
+            <!--fin des box-->
+
+<!-- Price Tag -->
+
+<div class="toggle-transparent toggle-bordered-full clearfix">
+
+	<br>
+		<a id="somme" class="float-right"> 0</a>
+		<span class="float-left">Lifts cage ammount:</span>
+	</span>
+</br>
+	<br>
+		<a id="fees" class="float-right"> 0.00</a>
+		<span class="float-left">Installation Fees:</span>
+		<strong class="float-right">$</strong>
+	</span>
+</br>
+	<br>
+		<a id="totalPrice" class="float-right">0.00</a>
+		<strong class="float-left">TOTAL:</strong>
+		<strong class="float-right">$</strong>
+	</span>
+	<hr>
+</br>
+<br>
+	<a href="" class="btn btn-dark btn-lgbtn-block fs-15"><i class="fa fa-mail-forward"></i> Send Form:</a>
+</br>
+</div>
+
+<!-- Price Tag -->
+</div>
 
 
 
@@ -268,15 +408,79 @@
 
 
 
+</div>
+<!-- FOOTER -->
+<footer id="footer">
+		<div class="container">
+
+
+			<div class="row">
+
+				<!-- col #1 -->
+				<div class="col-md-8">
+
+					<h3 class="letter-spacing-1">WHY US?</h3>
+
+					<!-- Small Description -->
+					<p>
+						We are offering top quality services<br>
+                        for people by people.
+					</p>
+					<h2>(581)-701-0303</h2>
+				</div>
+				<!-- /col #1 -->
+
+				<!-- col #2 -->
+				<div class="col-md-4">
+					<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+					<!-- Newsletter Form -->
+					<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+					<form class="validate" action="php/newsletter.php" method="post"
+						data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+							<input type="email" id="info@codeboxx.biz" name="info@codeboxx.biz"
+								class="form-control required" placeholder="info@codeboxx.biz">
+							<span class="input-group-btn">
+								<button class="btn btn-success" type="submit">Subscribe</button>
+							</span>
+						</div>
+					</form>
+					<!-- /Newsletter Form -->
+
+
+				</div>
+				<!-- /col #2 -->
+
+			</div>
+
+
+		</div>
+
+		<div class="copyright">
+			<div class="container">
+				<ul class="float-right m-0 list-inline mobile-block">
+					<li><a href="#">Terms &amp; Conditions</a></li>
+					<li>&bull;</li>
+					<li><a href="#">Privacy</a></li>
+				</ul>
+				&copy; All Rights Reserved, Company LTD
+			</div>
+		</div>
+
+	</footer>
+	<!-- /FOOTER -->
+
+   
 
 
 
 
-               <script src="dom.js"></script>
 
 
-
-
-
-
+                <script src="dom.js"></script>
+            
+            
                 </html>
