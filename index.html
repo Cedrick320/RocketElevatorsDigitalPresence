@@ -119,20 +119,23 @@
 						<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 							<li class="active">
 								<!-- HOME -->
-								<a href="#home">
+								<a href="index.html">
 									HOME
 								</a>
 							</li>
-							<li><!-- SERVICES -->
+							<li>
+							<li>
+								<!-- SERVICES -->
 								<a href="#services">
 									SERVICES
 								</a>
 								<ul class="dropdown-menu">
-							<li><a href="residential.html">Residential Services</a></li>
-							<li><a href="corpo.html">Corporate Services</a></li>
-							<li><a href="tender.html">Tender Form</a></li>
-						</ul>
+									<li><a href="residential.html">Residential Services</a></li>
+									<li><a href="corpo.html">Corporate Services</a></li>
+									<li><a href="tender.html">Tender Form</a></li>
+								</ul>
 							</li>
+							<li>
 								<!-- WORK -->
 								<a href="#work">
 									WORK
@@ -244,7 +247,8 @@
 						data-endelementdelay="0.1" data-endspeed="500"
 						style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
 
-						<a class="btn btn-dark" href="tender.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+						<a class="btn btn-dark" href="tender.html">GET A QUOTE &nbsp; <i
+								class="fa fa-angle-right"></i></a>
 				</li>
 
 
@@ -464,7 +468,7 @@
 					<div class="item-box">
 						<figure>
 							<span class="item-hover">
-								<span class="overlay dark-5"></span>
+							 <span class="overlay dark-5"></span>
 								<span class="inner">
 
 									<!-- lightbox -->
@@ -1057,7 +1061,7 @@
 
 			<header class="text-center mb-60">
 				<h2>Contact Us</h2>
-				<p class="lead font-lato">Sned us your ideas</p>
+				<p class="lead font-lato">Send us your ideas</p>
 				<hr />
 
 			</header>
@@ -1069,7 +1073,7 @@
 				<!-- FORM -->
 				<div class="col-md-8 col-sm-8">
 
-					<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+					<h3>Send us your plan <strong><em>For a personnalised service</em></strong></h3>
 
 					<!-- Alert Success -->
 					<div id="alert_success" class="alert alert-success mb-30">
@@ -1144,10 +1148,19 @@
 									<label for="contact:attachment"> File Attachment</label>
 
 									<!-- custom file upload -->
-								<button type="custom-file-upload" class="btn btn-info">
-									<i class= "fa fa-check"></i>Select a file 
-								</button>
-									<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+									<div class="row">
+										<div class="col-md-12">
+											<label for="contact:attachment">File Attachment</label>
+
+											<!-- custom file upload -->
+											<input class="custom-file-upload" type="file" id="file"
+												name="contact[attachment]" id="contact:attachment"
+												data-btn-text="Select a File" />
+											<small class="text-muted block">Max file size: 10Mb
+												(zip/pdf/jpg/png)</small>
+
+										</div>
+									</div>
 
 									<div class="row">
 										<div class="col-md-12">
@@ -1179,16 +1192,21 @@
 
 					<h2>Visit Us</h2>
 
-				   <a href="https://www.google.com/maps/place/CodeBoxx/@46.8428399,-71.2818835,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb897d0e1cafe3f:0x9863b2d992c71670!8m2!3d46.8428399!4d-71.2796948">
-					<img class="img-fluid" src="assets/images/maps2.png" alt="img"
-						style="width:320px;height:350px;">
+					<a
+						href="https://www.google.com/maps/place/CodeBoxx/@46.8428399,-71.2818835,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb897d0e1cafe3f:0x9863b2d992c71670!8m2!3d46.8428399!4d-71.2796948">
+						<img class="img-fluid" src="assets/images/maps2.png" alt="img"
+							style="width:320px;height:350px;">
 
-					<hr />
+						<hr />
 
-					<p>
-						<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 725 Lebourgneuf Blvd, Quebec City, QC, Canada G2J 0C4</span>
-						<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:(581)-701-0303"> 1 (581) 701-0303</a></span>
-						<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="#">info@codeboxx.biz</span></a></span>
+						<p>
+							<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 725
+								Lebourgneuf Blvd, Quebec City, QC, Canada G2J 0C4</span>
+							<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a
+									href="tel:(581)-701-0303"> 1 (581) 701-0303</a></span>
+							<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a
+									href="#">info@codeboxx.biz</span>
+					</a></span>
 					</p>
 
 				</div>

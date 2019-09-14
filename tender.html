@@ -121,11 +121,16 @@
 								</a>
 							</li>
 							<li>
-								<!-- SERVICES -->
-								<a href="#services">
-									SERVICES
-								</a>
-							</li>
+								<li><!-- SERVICES -->
+									<a href="#services">
+										SERVICES
+									</a>
+									<ul class="dropdown-menu">
+								<li><a href="residential.html">Residential Services</a></li>
+								<li><a href="corpo.html">Corporate Services</a></li>
+								<li><a href="tender.html">Tender Form</a></li>
+							</ul>
+								</li>
 							<li>
 								<!-- WORK -->
 								<a href="#work">
@@ -180,7 +185,7 @@
     
                             <div class="col-md-10" style="text-align: left">
                             <label for="building-box">Choose your building class:</label>
-                            <select  id="selector" onchange="on_change();" >
+                            <select  id="selector" onchange="on_change()" >
                                 <option value="0">Building class</option>
                                 <option value="1">Residential</option>
                                 <option value="2">Commercial</option>
@@ -190,15 +195,16 @@
                             </select>
     
                 <!--radio button-->
-            <div style="text-align:left ;">
+            <div id=radio class=radioB style="text-align:left ;">
                         <br>
                     <label for="quality">Quality range of the lifts and installation: </label>
-                    <input id="standard" type="radio" name="quality" value="standard"> Standard
-                    <input id="premium" type="radio" name="quality" value="premium"> Premium
-                    <input id="excelium" type="radio" name="quality" value="excelium"> Excelium
+				   
+	<input class=radioB value="standard" id="standard" type="radio" name="quality"onchange="calcResid()" onchange="calcCommercial()"onchange="calcCorp()"onchange="calcHybrid()" > Standard
+    <input class=radioB value="premium" id="premium" type="radio" name="quality" onchange="calcResid()" onchange="calcCommercial()"onchange="calcCorp()"onchange="calcHybrid()" > Premium
+    <input class=radioB value="excelium"id="excelium" type="radio" name="quality" onchange="calcResid()" onchange="calcCommercial()"onchange="calcCorp()"onchange="calcHybrid()" > Excelium
                 </br>
                
-               
+               <!--onchange="calcResid()" onchange="calcCommercial()" onchange="calcCorp()"-->
             </div>               
                <!--radiobutton-->
 			<div class="col-md-12">
@@ -211,19 +217,19 @@
             
             <label class="fs-12">Number of apartement:</label>
             
-        <input required type="number" min="0" value="" class="residentalbuild" id="nb-app-resid" >
+        <input required type="number" min="0" value="" class="residentalbuild" id="nb-app-resid" onkeyup="calcResid()">
             
             <!--NUMB ETAGE--> 
                  <label class="fs-12">Number of floor:</label>
 
                
-               <input required type="number" min="0" value="" class="residentialbuild" id="nb-floor-resid" onkeyup="calcResidential()">
+               <input required type="number" min="0" value="" class="residentialbuild" id="nb-floor-resid" onkeyup="calcResid()">
                
                 
                 <!--Basements-->
             <label class="fs-12">Number of basements:</label>
 
-            <input required type="number" min="0" value="" class="residentialbuild" id="nb-bsmnt-resid" onkeyup="calcResidential()">
+            <input required type="number" min="0" value="" class="residentialbuild" id="nb-bsmnt-resid" onkeyup="calcResid()">
 
 
         </div>
@@ -251,7 +257,7 @@
             <label class="fs-12">Number of basement:</label>
 
 
-            <input required type="number" min="0" value=""class="commercial build"id="nb-bsmnt-comm" onkeyup="calcCommercial()">
+            <input required type="number" min="0" value=""class="commercial build"id="nb-bsmnt-comm"onkeyup="calcCommercial()" >
 
 
 
@@ -260,7 +266,7 @@
             <label class="fs-12">Number of parking places:</label>
 
 
-            <input required type="number" min="0" value="" class="commercial build"id="nb-park-comm" onkeyup="calcCommercial()">
+            <input required type="number" min="0" value="" class="commercial build"id="nb-park-comm" onkeyup="calcCommercial()" >
 
 
             <!--numb lift cages-->
@@ -269,11 +275,11 @@
             <label class="fs-12">Number of lift cages:</label>
 
 
-            <input required type="number" min="0" value="" class="commercial build"id="nb-lift-comm" onkeyup="calcCommercial()">
+            <input required type="number" min="0" value="" id="nb-lift-comm" onkeyup="calcCommercial()">
 
         </div>
 
-        <!--corp box-->
+        <!--Corporative box-->
        <div id="corp" style="text-align: center; display: none;">
     
         <!--numb locataire-->
@@ -281,32 +287,32 @@
         <label class="fs-12">Number of differants tenant company:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-rent-corp" onkeyup="calcCorporative()">
+        <input required type="number" min="0" value="" id="nb-rent-corp" onkeyup="calcCorp()">
 
     
         <!--numb floor-->
         <label class="fs-12">Number of floor:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-floor-corp" onkeyup="calcCorporative()">
+        <input required type="number" min="0" value="" id="nb-floor-corp" onkeyup="calcCorp()">
 
         <!--numb basement-->
         <label class="fs-12">Number of basement:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-bsmnt-corp" onkeyup="calcCorporative()">
+		<input required type="number" min="0" value="" id="nb-bsmnt-corp"  onkeyup="calcCorp()">
 
         <!--numb parking-->
         <label class="fs-12">Number of parking places:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-park-corp" onkeyup="calcCorporative()">
+        <input required type="number" min="0" value="" id="nb-park-corp" onkeyup="calcCorp()">
 
         <!--max pple per floor-->
         <label class="fs-12">Maximum people ammount per floor:</label>
 
 
-        <input required type="number" min="0" value="" class="nb-ppl-corp" onkeyup="calcCorporative()">
+        <input required type="number" min="0" value="" id="nb-ppl-corp" onkeyup="calcCorp()">
 
     
     
@@ -319,33 +325,33 @@
              <!--commerce distincts-->
              <label class="fs-12">Number of distinct business:</label>
 
-             <input required type="number" min="0" value="" class="hybridbuild" id="nb-busi-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" value="" class="hybridbuild" id="nb-busi-hybrid" onkeyup="calcHybrid()">
              <!--nb floor-->   
              <label class="fs-12">Number of floor:</label>
 
-             <input required type="number" min="0" value="" class="hybridbuild" id="nb-floor-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" value="" class="hybridbuild" id="nb-floor-hybrid" onkeyup="calcHybrid()">
                 <!--nb basement-->
                 <label class="fs-12">Number of basement:</label>
 
-             <input required type="number" min="0" value="" class="hybridbuild" id="nb-bsmnt-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" value="" class="hybridbuild" id="nb-bsmnt-hybrid" onkeyup="calcHybrid()">
  
                 <!--nb places stationnement-->
 
                 <label class="fs-12">Number of parking places:</label>
 
-                <input required type="number" min="0" value="" class="hybridbuild" id="nb-park-hybrid" onkeyup="CalcHybrid()">
+                <input required type="number" min="0" value="" class="hybridbuild" id="nb-park-hybrid" onkeyup="calcHybrid()">
     
                 <!--nb max de personnes par étage-->
 
                 <label class="fs-12">Maximum people ammount per floor:</label>
 
-                <input required type="number" min="0" value="" class="hybridbuild" id="nb-ppl-hybrid" onkeyup="CalcHybrid()">
+                <input required type="number" min="0" value="" class="hybridbuild" id="nb-ppl-hybrid" onkeyup="calcHybrid()">
 
                 <!--heures d'activité par jour-->
             
                 <label class="fs-12">Hours of activity<span>(max 24)</span></label>
 
-             <input required type="number" min="0" max=24 value="" class="hybridbuild" id="nb-hrs-hybrid" onkeyup="CalcHybrid()">
+             <input required type="number" min="0" max=24 value="" class="hybridbuild" id="nb-hrs-hybrid" onkeyup="calcHybrid()">
  
             </div>
         </div>
@@ -363,8 +369,8 @@
 <div class="toggle-transparent toggle-bordered-full clearfix">
 
 	<br>
-		<a id="total-lift" class="float-right" > 0</a>
-		<span class="float-left">Lifts cage ammount:</span>
+		<a id = "numb-lift" class="float-right" > 0</a>
+		<span  class="float-left">Lifts cage ammount:</span>
 	</span>
 </br>
 	<br>
