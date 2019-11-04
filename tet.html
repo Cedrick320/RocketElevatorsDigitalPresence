@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+ #map{
+   height:80%;
+   width:100%;
+ }
+</style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GeoCode app</title>
+</head>
+<body>
+<div id="map"></div>
+<div id = "formatted_address">
+    <p id = "1"></p>
+</div>     
+ 
+ <script>
+ 
+   // call geo code 
+    
+ // var test ="<% @Building %>"
+//  console.log(test)
+     var lat;
+    var long ;
+   
+    function initMap() {
+       console.log(lat)
+       console.log(long)
+     // lat:46.8428399 lng:-71.2796948
+     var options = { 
+      center: { lat:46.8428399 , lng:-71.2796948  },
+       zoom: 18}
+     
+     var map = new google.maps.Map(document.getElementById('map'), options);
+   var marker = new google.maps.Marker({
+    position: { lat: 46.8428399 , lng: -71.2796948},
+    map: map,
+    title: 'codeboxx'
+  });
+   }
+   function geoCode(){
+    var location ="codeboxx";
+       axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+           params:{
+               address: location,
+               key: 'AIzaSyAwrYNkwVv0qwwjYo2GYeB0bDHLM-GTM30'
+           }
+       })
+       .then(function(response){
+        console.log(response)
+      // formatted address
+        lat = response.data.results[0].geometry.location.lat
+        long = response.data.results[0].geometry.location.lng
+        var latOutput = lat
+        var longOutput = long
+        
+        document.getElementById("1").innerHTML = "Latitude :" +" "+latOutput;
+    })
+    .catch(function(error){
+        console.log(error);
+    });  
+    }
+     geoCode();
+       
+   </script>
+ 
+
+
+ 
+
+<script async  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwrYNkwVv0qwwjYo2GYeB0bDHLM-GTM30&callback=initMap"> </script>
+</body>
+
+</html>
