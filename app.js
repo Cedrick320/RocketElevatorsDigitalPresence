@@ -1,14 +1,7 @@
-const http = require('http');
-const server = http.createServer(req, res) => {
-    if (req.url === '/'){
-        res.write('Hello World');
-        res.end()
-   }
+let express = require('express')
+const app = express();
 
-   if (req.url ==='/api/courses'){
-       res.write(JSON.stringify([i,2,3]));
-       res.end()
-   }
-
-
-}
+app.get('/'(req,res) => {
+res.send('Hello World')
+});
+app.listen(3000,()=> console.log("listening on port 3000"))
